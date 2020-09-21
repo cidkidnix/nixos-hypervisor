@@ -47,9 +47,8 @@ in
   };
 
 
-	config = mkMerge [ 
-	   mkIf cfg.enable {
-
+	config = mkIf cfg.enable {
+		mkMerge [
 		(mkIf cfg.vmmanager.win10.enable {
 			systemd.services.vmmanager = {
 				after = [ "multi-user.target" ];
@@ -81,5 +80,6 @@ in
         			}
      			];
 		})
-	}
-];
+       ];
+}
+
