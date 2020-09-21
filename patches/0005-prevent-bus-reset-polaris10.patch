@@ -1,0 +1,11 @@
+--- a/drivers/pci/quirks.c	2020-07-26 05:42:32.905082308 -0500
++++ b/drivers/pci/quirks.c	2020-07-26 06:29:31.516559562 -0500
+@@ -5584,6 +5584,8 @@
+ 			      PCI_CLASS_DISPLAY_VGA, 8,
+ 			      quirk_reset_lenovo_thinkpad_p50_nvgpu);
+ 
++DECLARE_PCI_FIXUP_HEADER(0x1002, 0x67df, quirk_no_bus_reset);
++DECLARE_PCI_FIXUP_HEADER(0x1002, 0xaaf0, quirk_no_bus_reset);
+ /*
+  * Device [1b21:2142]
+  * When in D0, PME# doesn't get asserted when plugging USB 3.0 device.
