@@ -47,7 +47,8 @@ in
   };
 
 
-	config = mkIf cfg.enable {
+	config = mkMerge [ 
+	   mkIf cfg.enable {
 
 		(mkIf cfg.vmmanager.win10.enable {
 			systemd.services.vmmanager = {
@@ -81,3 +82,4 @@ in
      			];
 		})
 	}
+];
