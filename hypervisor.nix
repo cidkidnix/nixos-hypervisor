@@ -4,6 +4,7 @@ with lib;
 
 let
    cfg = config.services.nixos-hypervisor;
+   vmmanager = ./scripts/win10-vm-manager.sh
 in
 
 {
@@ -75,10 +76,10 @@ in
 		(mkIf cfg.patches.acs.enable {
 			boot.kernelPatches = [
 				{
-         			       name = "no-bus-reset";
-               			       patch = ./patches/0005-prevent-bus-reset-polaris10.patch;
-        			}
-     			];
+				       name = "no-bus-reset";
+				       patch = ./patches/0005-prevent-bus-reset-polaris10.patch;
+				}
+			];
 		})
        ];
 }
