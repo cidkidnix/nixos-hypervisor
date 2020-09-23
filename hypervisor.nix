@@ -4,7 +4,7 @@ with lib;
 
 let
    cfg = config.services.nixos-hypervisor;
-   vmmanager = ./scripts/win10-vm-manager.sh
+   vmmanager = ./scripts/win10-vm-manager.sh;
 in
 
 {
